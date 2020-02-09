@@ -1,0 +1,13 @@
+.. _doc_faq:
+
+Frequently Asked Questions
+==========================
+
+General
+-------
+
+
+
+Software
+--------
+

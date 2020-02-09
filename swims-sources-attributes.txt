@@ -1,0 +1,1318 @@
+OBJECTID: Integer (9.0)
+Name: String (254.0)
+Village: String (254.0)
+Latitude: Real (19.11)
+Longitude: Real (19.11)
+NGO: String (254.0)
+Phase: String (254.0)
+Source: String (254.0)
+Remarks: String (254.0)
+ZONE: String (254.0)
+NOTE: String (254.0)
+COUNTRY: String (254.0)
+Source_Typ: String (254.0)
+Photos: String (254.0)
+Inspecting: String (254.0)
+Region: String (254.0)
+District: String (254.0)
+Source_Nam: String (254.0)
+Nearest_Se: String (254.0)
+Elevation: Real (19.11)
+Users: String (254.0)
+Agency_tha: String (254.0)
+Date_Sourc: String (254.0)
+Functionin: String (254.0)
+Permanent: String (254.0)
+No__HH_Usi: Real (19.11)
+No__of_Cam: String (254.0)
+ No__of_C: String (254.0)
+ No__of_S: String (254.0)
+Area_Irrig: String (254.0)
+Source_Dep: Real (19.11)
+Operating: String (254.0)
+Source_cap: String (254.0)
+Operatin_1: String (254.0)
+Operatin_2: String (254.0)
+Recovery_T: String (254.0)
+Source_Pro: String (254.0)
+Supply_Sys: String (254.0)
+Storage_Ta: String (254.0)
+Pipeline_L: String (254.0)
+Pump_Type: String (254.0)
+Pump_level: String (254.0)
+Electrical: Real (19.11)
+pH: Real (19.11)
+Temperatur: String (254.0)
+Total_Diss: String (254.0)
+Water_Samp: String (254.0)
+Water_Sa_1: String (254.0)
+Owner: String (254.0)
+Cost_of_wa: String (254.0)
+Cost_of__1: Real (19.11)
+Last_Inter: String (254.0)
+Last_Int_1: String (254.0)
+Last_Int_2: String (254.0)
+Proposed_I: String (254.0)
+Proposed_1: String (254.0)
+Additional: String (254.0)
+Record_Dat: Date (10.0)
+
+
+    object_id = models.IntegerField('Object ID')
+    person_name = models.CharField("Person name",null=True, blank=True,max_length=254)
+    village = models.CharField('Village',null=True, blank=True,max_length=254)
+    latitude = models.FloatField('Latitude',)
+    longitude = models.FloatField('Longitude',)
+    ngo = models.CharField('NGO',null=True, blank=True,max_length=254,choices=NGO_CHOICES)
+    phase = models.CharField('Phase',null=True, blank=True,max_length=254)
+    source_protected = models.CharField('Protected source',null=True, blank=True,max_length=254)
+    remarks = models.CharField('Remarks',null=True, blank=True,max_length=254)
+    zone = models.CharField('Zone',null=True, blank=True,max_length=254)
+    note = models.CharField('Note',null=True, blank=True,max_length=254)
+    country = models.CharField('Country',null=True, blank=True,max_length=254)
+    source_type = models.CharField('Water source type',null=True, blank=True,max_length=254)
+    photos = models.CharField('Photographs',null=True, blank=True,max_length=254)
+    inspecting_person = models.CharField('Inspecting person',null=True, blank=True,max_length=254)
+    region = models.CharField('Region',null=True, blank=True,max_length=254)
+    district = models.CharField('District',null=True, blank=True,max_length=254)
+    source_name = models.CharField('Source name',null=True, blank=True,max_length=254)
+    nearest_settlement = models.CharField('Nearest settlement name',null=True, blank=True,max_length=254)
+    elevation = models.FloatField('Elevation')
+    users = models.CharField('Users',null=True, blank=True,max_length=254)
+    agency_established = models.CharField('Agency that established water source',null=True, blank=True,max_length=254)
+    date_source = models.CharField('Date source',null=True, blank=True,max_length=254)
+    functioning = models.CharField('Functioning?',null=True, blank=True,max_length=254)
+    permanent = models.CharField('Permanent use?',null=True, blank=True,max_length=254)
+    no_households = models.FloatField('No. of piped HH connections')
+    no_of_camels = models.CharField('No. of Camels using the source',null=True, blank=True,max_length=254)
+    no_of_cattle = models.CharField('No. of Cattle using the source',null=True, blank=True,max_length=254)
+    no_of_shoats = models.CharField('No. of Sheep/Goats using the source',null=True, blank=True,max_length=254)
+    area_irrigation = models.CharField('Area irrigated using the source (ha)',null=True, blank=True,max_length=254)
+    source_depth = models.FloatField('Source depth')
+    operating_yield = models.CharField('Operating Yield',null=True, blank=True,max_length=254)
+    source_capacity = models.CharField('Source Capacity',null=True, blank=True,max_length=254)
+    operatin_hours = models.CharField('Operating Hours/Day',null=True, blank=True,max_length=254)
+    operatin_drawn = models.CharField('Operating Drawn Down',null=True, blank=True,max_length=254)
+    recovery_time = models.CharField('Recovery time',null=True, blank=True,max_length=254)
+    source_protected = models.CharField('Source protected?',null=True, blank=True,max_length=254)
+    supply_system = models.CharField('Condition of supply system',null=True, blank=True,max_length=254)
+    storage_tanks = models.CharField('Storage tanks',null=True, blank=True,max_length=254)
+    pipeline_type = models.CharField('Pipeline type',null=True, blank=True,max_length=254)
+    pump_type = models.CharField('Pump type',null=True, blank=True,max_length=254)
+    # pump_model
+    # pump_capacity
+    pump_level = models.CharField('Pump level',null=True, blank=True,max_length=254)
+    electrical = models.FloatField('Electrical Conductivity (EC)')
+    ph = models.FloatField('pH')
+    temperature = models.CharField('Temperature',null=True, blank=True,max_length=254)
+    total_dissolved_solids = models.CharField('Total Dissolved Solids (TDS)',null=True, blank=True,max_length=254)
+    water_sample_no = models.CharField('Water sample No. (if taken)',null=True, blank=True,max_length=254)
+    physical_problem = models.CharField('Any visible physical problem (color, odor)?',null=True, blank=True,max_length=254)
+    source_owner = models.CharField('Source owner',null=True, blank=True,max_length=254)
+    cost_of_water_humans = models.CharField('Current cost of 20 ltr jerrican',null=True, blank=True,max_length=254)
+    cost_of_water_animals = models.FloatField('Current cost')
+    last_intervention = models.CharField('Recent Interventions',null=True, blank=True,max_length=254)
+    last_intervention_1 = models.CharField('Recent Interventions',null=True, blank=True,max_length=254)
+    last_intervention_2 = models.CharField('Recent Interventions',null=True, blank=True,max_length=254)
+    proposed_intervention_1 = models.CharField('Proposed Interventions',null=True, blank=True,max_length=254)
+    proposed_intervention_2 = models.CharField('Proposed Interventions',null=True, blank=True,max_length=254)
+    additional_information = models.TextField('Additional Information',null=True, blank=True,max_length=254)
+    record_date = models.DateField('Record Date')
+    geom = models.MultiPointField(srid=4326)
+
+
+OBJECTI = models.CharField(max_length=100)
+    Name = models.CharField(max_length=100)
+    Village = models.CharField(max_length=100)
+    Latitude = models.CharField(max_length=100)
+    Longitude = models.CharField(max_length=100)
+    NGO = models.CharField(max_length=100)
+    Phase = models.CharField(max_length=100)
+    Source = models.CharField(max_length=100)
+    Remarks = models.CharField(max_length=100)
+    ZONE = models.CharField(max_length=100)
+    NOTE = models.CharField(max_length=100)
+    COUNTRY = models.CharField(max_length=100)
+    Source_Typ = models.CharField(max_length=100)
+    Photos = models.CharField(max_length=100)
+    Inspecting = models.CharField(max_length=100)
+    Region = models.CharField(max_length=100)
+    District = models.CharField(max_length=100)
+    Source_Nam = models.CharField(max_length=100)
+    Nearest_Se = models.CharField(max_length=100)
+    Elevation= models.CharField(max_length=100)
+    Users = models.CharField(max_length=100)
+    Agency_tha = models.CharField(max_length=100)
+    Date_Sourc = models.CharField(max_length=100)
+    Functionin = models.CharField(max_length=100)
+    Permanent = models.CharField(max_length=100)
+    No__HH_Usi= models.CharField(max_length=100)
+    No__of_Cam = models.CharField(max_length=100)
+    No__of_C = models.CharField(max_length=100)
+    No__of_S = models.CharField(max_length=100)
+    Area_Irrig = models.CharField(max_length=100)
+    Source_Dep= models.CharField(max_length=100)
+    Operating = models.CharField(max_length=100)
+    Source_cap = models.CharField(max_length=100)
+    Operatin_1 = models.CharField(max_length=100)
+    Operatin_2 = models.CharField(max_length=100)
+    Recovery_T = models.CharField(max_length=100)
+    Source_Pro = models.CharField(max_length=100)
+    Supply_Sys = models.CharField(max_length=100)
+    Storage_Ta = models.CharField(max_length=100)
+    Pipeline_L = models.CharField(max_length=100)
+    Pump_Type = models.CharField(max_length=100)
+    Pump_level = models.CharField(max_length=100)
+    Electrical= models.CharField(max_length=100)
+    pH= models.CharField(max_length=100)
+    Temperatur = models.CharField(max_length=100)
+    Total_Diss = models.CharField(max_length=100)
+    Water_Samp = models.CharField(max_length=100)
+    Water_Sa_1 = models.CharField(max_length=100)
+    Owner = models.CharField(max_length=100)
+    Cost_of_wa = models.CharField(max_length=100)
+    Cost_of__1= models.CharField(max_length=100)
+    Last_Inter = models.CharField(max_length=100)
+    Last_Int_1 = models.CharField(max_length=100)
+    Last_Int_2 = models.CharField(max_length=100)
+    Proposed_I = models.CharField(max_length=100)
+    Proposed_1 = models.CharField(max_length=100)
+    Additional = models.CharField(max_length=100)
+    Record_Dat = models.CharField(max_length=100)
+
+
+    id = models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
+    object_id = models.IntegerField('Object ID')
+    person_name = models.CharField("Person name",null=True, blank=True,max_length=254)
+    village = models.CharField('Village',null=True, blank=True,max_length=254)
+    latitude = models.FloatField('Latitude',)
+    longitude = models.FloatField('Longitude',)
+    ngo = models.CharField('NGO',null=True, blank=True,max_length=254,choices=NGO_CHOICES)
+    phase = models.CharField('Phase',null=True, blank=True,max_length=254)
+    source_protected = models.CharField('Protected source',null=True, blank=True,max_length=254)
+    remarks = models.CharField('Remarks',null=True, blank=True,max_length=254)
+    zone = models.CharField('Zone',null=True, blank=True,max_length=254)
+    note = models.CharField('Note',null=True, blank=True,max_length=254)
+    country = models.CharField('Country',null=True, blank=True,max_length=254)
+    source_type = models.CharField('Water source type',null=True, blank=True,max_length=254)
+    photos = models.CharField('Photographs',null=True, blank=True,max_length=254)
+    inspecting_person = models.CharField('Inspecting person',null=True, blank=True,max_length=254)
+    region = models.CharField('Region',null=True, blank=True,max_length=254)
+    district = models.CharField('District',null=True, blank=True,max_length=254)
+    source_name = models.CharField('Source name',null=True, blank=True,max_length=254)
+    nearest_settlement = models.CharField('Nearest settlement name',null=True, blank=True,max_length=254)
+    elevation = models.FloatField('Elevation')
+    users = models.CharField('Users',null=True, blank=True,max_length=254)
+    agency_established = models.CharField('Agency that established water source',null=True, blank=True,max_length=254)
+    date_source = models.CharField('Date source',null=True, blank=True,max_length=254)
+    functioning = models.CharField('Functioning?',null=True, blank=True,max_length=254)
+    permanent = models.CharField('Permanent use?',null=True, blank=True,max_length=254)
+    no_households = models.FloatField('No. of piped HH connections')
+    no_of_camels = models.CharField('No. of Camels using the source',null=True, blank=True,max_length=254)
+    no_of_cattle = models.CharField('No. of Cattle using the source',null=True, blank=True,max_length=254)
+    no_of_shoats = models.CharField('No. of Sheep/Goats using the source',null=True, blank=True,max_length=254)
+    area_irrigation = models.CharField('Area irrigated using the source (ha)',null=True, blank=True,max_length=254)
+    source_depth = models.FloatField('Source depth')
+    operating_yield = models.CharField('Operating Yield',null=True, blank=True,max_length=254)
+    source_capacity = models.CharField('Source Capacity',null=True, blank=True,max_length=254)
+    operatin_hours = models.CharField('Operating Hours/Day',null=True, blank=True,max_length=254)
+    operatin_drawn = models.CharField('Operating Drawn Down',null=True, blank=True,max_length=254)
+    recovery_time = models.CharField('Recovery time',null=True, blank=True,max_length=254)
+    source_protected = models.CharField('Source protected?',null=True, blank=True,max_length=254)
+    supply_system = models.CharField('Condition of supply system',null=True, blank=True,max_length=254)
+    storage_tanks = models.CharField('Storage tanks',null=True, blank=True,max_length=254)
+    pipeline_type = models.CharField('Pipeline type',null=True, blank=True,max_length=254)
+    pump_type = models.CharField('Pump type',null=True, blank=True,max_length=254)
+    pump_model = models.CharField('Pump model',null=True, blank=True,max_length=254)
+    pump_capacity = models.CharField('Pump capacity',null=True, blank=True,max_length=254)
+    pump_level = models.CharField('Pump level',null=True, blank=True,max_length=254)
+    electrical = models.FloatField('Electrical Conductivity (EC)')
+    ph = models.FloatField('pH')
+    temperature = models.CharField('Temperature',null=True, blank=True,max_length=254)
+    total_dissolved_solids = models.CharField('Total Dissolved Solids (TDS)',null=True, blank=True,max_length=254)
+    water_sample_no = models.CharField('Water sample No. (if taken)',null=True, blank=True,max_length=254)
+    physical_problem = models.CharField('Any visible physical problem (color, odor)?',null=True, blank=True,max_length=254)
+    source_owner = models.CharField('Source owner',null=True, blank=True,max_length=254)
+    cost_of_water_humans = models.CharField('Current cost of 20 ltr jerrican',null=True, blank=True,max_length=254)
+    cost_of_water_animals = models.FloatField('Current cost')
+    last_intervention = models.CharField('Recent Interventions',null=True, blank=True,max_length=254)
+    last_intervention_1 = models.CharField('Recent Interventions',null=True, blank=True,max_length=254)
+    last_intervention_2 = models.CharField('Recent Interventions',null=True, blank=True,max_length=254)
+    proposed_intervention_1 = models.CharField('Proposed Interventions',null=True, blank=True,max_length=254)
+    proposed_intervention_2 = models.CharField('Proposed Interventions',null=True, blank=True,max_length=254)
+    additional_information = models.TextField('Additional Information',null=True, blank=True,max_length=254)
+    record_date = models.DateField('Record Date')
+    geom = models.MultiPointField(srid=4326)
+
+
+    Action Afrika Hilfe e.V
+Access Aid
+Action Internationale Centre La Fairm
+ACTED
+Action Aid
+ADA
+ADESO
+Adventist Development Relief Agency
+Africa Rescue Committee
+Africa 70
+AGROSPHERE
+Africa Muslims Agency
+Association for Participation in Development
+African Relief Aid
+Aaran Relief and Development Organisation
+Africa Relief and Development Programme
+Advance for Small Enterprise Program
+PZG Belgium
+Appropriate Sustainable Pastoralist Environment
+AVORD
+AYUUB
+Bani Adam
+Bio Fit
+British Protectorate
+BTSC
+Candlelight
+CARE Somalia
+Caritas
+Caritas Somaliland
+Caritas Switzerland
+CDO - Somalia
+CED
+Somalia European Committee for Agricultural Training
+CESVI
+Chinese Government
+Canadian International Development Agency
+International Committee for the Development of Peoples 
+CODNET
+Community
+COMORAD
+Concern Worldwide Somalia
+Cooperazione Internazionale
+Coordinating Committee of The Organization for Voluntary Service
+CPD
+Dahabshil Company
+Danish Refugee Council (Puntland)
+Danish Refugee Council (Regional Office)
+Danish Refugee Council (Somaliland)
+Dayah
+Diakonie Emergency Aid Bread for the World
+Department For International Development
+Diakonia Sweden
+DIAL
+Doha Foundation
+European Commission
+European Community Humanitarian Office
+European Union
+EVSO
+East Africa Welfare And Development Association
+Food and Agriculture Organisation of the UN
+Farjano
+FERO
+Famine Early Warning Systems Network
+Finland Government
+Former Somali Government
+Food Security and Nutrition Analysis Unit
+German Agro Action
+Galdogob Water Company
+GEELO
+GGREB
+Global one 2015
+GMC
+Golweyne Relief and Rehabilitation
+GRC - Germany Red Cross
+GREDO
+Green Hope
+GRRN
+General Service Agency
+German Agency for Technical Assistance
+Gumco company
+GWDO
+HAPO CHILD
+Hareed Human Right Organisation
+Hargeisa Water Agency
+Hargeisa Voluntary Youth Committee
+Humanitarian Development Organization Inc
+HEAL-Horn Orgnaization
+Hijra
+HINNA
+Horn Relief
+Horseed water company
+Humanitarian Cooperation Somalia
+HWS&CDO
+Islamic Africa Relief Agency
+IAS
+Somalia Civil Aviation Organisation
+International Committee of The Red Cross
+Islamic Development Bank
+International Fund for Agricultural Development 
+International Federation of Red Cross
+IIDA
+International Labour Organization
+IMC
+InterSOS
+International Organisation of Migration
+Islamic Relief Somalia
+International Rescue Committee
+IRD
+ISRA
+ISRC - Islamic Relief Committee
+Italian Government
+Jubbalandese Charity Centre
+Japanese International Coorporation Agency
+JPDO
+Juba Shine
+Juba Water Agency
+Jubba Aid
+Jubba Foundation Development and Rehabilitation
+KAALO Relief and Development
+Khalifa Foundation UAE
+Korea Government
+Kulan Water Agency
+Kuwait Government
+Limaan Relief Development Organization 
+LQC
+Manhal Relief Organization
+Maygaag community
+Medair
+Medina Hospital
+Mercy Corps Somalia
+Mercy USA
+MGV
+MHSC
+Medicins Sans Frontieres
+Mumin Global Water
+Mubarak for Relief Development Organization
+Muslim Aid 
+Muslim Charity
+Norwegian Church Aid
+Network for Aid Protection Development NAPAD 
+NorSom
+NOVIB Netherlands
+NOVIB Somalia
+Norwegian Peoples Aid
+Norwegian Refugee Council
+NUWACO Water Company
+Office of U.S Foreign Disaster Assistance
+ORDO
+Other
+Oxfam GB
+Oxfam Novib
+Oxfam UK
+Polish Humanitarian Action
+Pastoral and Environmental Network for the Horn of Africa 
+Private
+Puntland Ministry of Energy, Minerals and Water
+Puntland Ministry of Environment, Agriculture and Climate change
+Puntland Ministry of Livestock
+Puntland Ministry of Planning, Economic Development & International Cooperation
+Puntland Humanitarian Affairs and Disaster Management Agency 
+Qatar Charity
+Rainwater Association of Somalia
+RAHMO
+RAO
+RAWA
+RDI
+Red Crescent Society for United Arab Emirates 
+RESDO - Regional Economic Development Services Office
+Saabir Company
+SAACID
+SADO - Social-Life and Agricultural Development Organization
+SAFUK
+Samrado
+SAREDO Somalia
+Saudi Government
+Swedish African Welfare Alliance
+Save the Children Denmark
+SCC
+Save the Children UK
+SCWRW - Somali Children 
+Welfare and Rights Watch
+Somalia Development Organization
+SDRO
+Solidarity Group of Jubaland
+SHABA
+SHILCON
+Service International Relief Agency
+Solidarities
+Soma-Action
+Somali People Care 
+Somali Welfare Organization
+Somalia Community Services
+Somalia Intercommunity Organization for Rehabilitation and Development
+Federal Government of Somalia Ministry of Agriculture and Irrigation 
+Federal Government of Somalia Ministry of Energy and Water Resources 
+Federal Government of Somalia Ministry of Livestock, Forestry and Range 
+Federal Government of Somalia Disaster Management Agency 
+Somaliland Ministry of Water Resources Development
+Somaliland Ministry of Environment and Rural Development
+Somaliland Ministry of Agricultural Development
+Somaliland Ministry of Livestock
+Somaliland National Disaster Preparedness and Food Reserve Authority 
+SOPHPA
+SORERDO
+SORSO
+Southern Aid
+SOYVGA
+SPDO
+Somali Relief Center
+Somali Red Crescent Society
+SSWC
+SURDO
+Somalia Water and Land Information Management
+SWISS GROUP Caritas 
+SYPD
+TARDO
+TASCO
+Tadamun Social Society
+Terra Nuova Association
+TGV
+TIKA - Turkish International Cooperation and Development Agency 
+Turkish Government
+United Arab Emirates Red Crescent 
+United Nations Development Programme
+United Nations Educational, Scientific and Cultural Organisation
+United Nations Human Settlements Programme
+United Nations High Commission for Refugees
+United Nations Children's Fund
+Office of the Coordination of Humanitarian Affairs
+United Nations Office for Project Services 
+USA International Development
+WARDI
+WASDA
+Water For Life
+WDA - Water Development Agency
+WDC Bardera
+United Nations World Food Programme
+United Nations World Health Organisation
+WOCCA
+WOCSO
+World Assembly of Muslim Youth
+World Bank
+World Concern
+World Vision
+YME
+Community
+not_specified
+
+Action Afrika Hilfe e.V
+Access Aid
+Action Internationale Centre La Fairm
+ACTED
+Action Aid
+ADA
+ADESO
+Adventist Development Relief Agency
+Africa Rescue Committee
+Africa 70
+AGROSPHERE
+Africa Muslims Agency
+Association for Participation in Development
+African Relief Aid
+Aaran Relief and Development Organisation
+Africa Relief and Development Programme
+Advance for Small Enterprise Program
+PZG Belgium
+Appropriate Sustainable Pastoralist Environment
+AVORD
+AYUUB
+Bani Adam
+Bio Fit
+British Protectorate
+BTSC
+Candlelight
+CARE Somalia
+Caritas
+Caritas Somaliland
+Caritas Switzerland
+CDO - Somalia
+CED
+Somalia European Committee for Agricultural Training
+CESVI
+Chinese Government
+Canadian International Development Agency
+International Committee for the Development of Peoples 
+CODNET
+Community
+COMORAD
+Concern Worldwide Somalia
+Cooperazione Internazionale
+Coordinating Committee of The Organization for Voluntary Service
+CPD
+Dahabshil Company
+Danish Refugee Council (Puntland)
+Danish Refugee Council (Regional Office)
+Danish Refugee Council (Somaliland)
+Dayah
+Diakonie Emergency Aid Bread for the World
+Department For International Development
+Diakonia Sweden
+DIAL
+Doha Foundation
+European Commission
+European Community Humanitarian Office
+European Union
+EVSO
+East Africa Welfare And Development Association
+Food and Agriculture Organisation of the UN
+Farjano
+FERO
+Famine Early Warning Systems Network
+Finland Government
+Former Somali Government
+Food Security and Nutrition Analysis Unit
+German Agro Action
+Galdogob Water Company
+GEELO
+GGREB
+Global one 2015
+GMC
+Golweyne Relief and Rehabilitation
+GRC - Germany Red Cross
+GREDO
+Green Hope
+GRRN
+General Service Agency
+German Agency for Technical Assistance
+Gumco company
+GWDO
+HAPO CHILD
+Hareed Human Right Organisation
+Hargeisa Water Agency
+Hargeisa Voluntary Youth Committee
+Humanitarian Development Organization Inc
+HEAL-Horn Orgnaization
+Hijra
+HINNA
+Horn Relief
+Horseed water company
+Humanitarian Cooperation Somalia
+HWS&CDO
+Islamic Africa Relief Agency
+IAS
+Somalia Civil Aviation Organisation
+International Committee of The Red Cross
+Islamic Development Bank
+International Fund for Agricultural Development 
+International Federation of Red Cross
+IIDA
+International Labour Organization
+IMC
+InterSOS
+International Organisation of Migration
+Islamic Relief Somalia
+International Rescue Committee
+IRD
+ISRA
+ISRC - Islamic Relief Committee
+Italian Government
+Jubbalandese Charity Centre
+Japanese International Coorporation Agency
+JPDO
+Juba Shine
+Juba Water Agency
+Jubba Aid
+Jubba Foundation Development and Rehabilitation
+KAALO Relief and Development
+Khalifa Foundation UAE
+Korea Government
+Kulan Water Agency
+Kuwait Government
+Limaan Relief Development Organization 
+LQC
+Manhal Relief Organization
+Maygaag community
+Medair
+Medina Hospital
+Mercy Corps Somalia
+Mercy USA
+MGV
+MHSC
+Medicins Sans Frontieres
+Mumin Global Water
+Mubarak for Relief Development Organization
+Muslim Aid 
+Muslim Charity
+Norwegian Church Aid
+Network for Aid Protection Development NAPAD 
+NorSom
+NOVIB Netherlands
+NOVIB Somalia
+Norwegian Peoples Aid
+Norwegian Refugee Council
+NUWACO Water Company
+Office of U.S Foreign Disaster Assistance
+ORDO
+Other
+Oxfam GB
+Oxfam Novib
+Oxfam UK
+Polish Humanitarian Action
+Pastoral and Environmental Network for the Horn of Africa 
+Private
+Puntland Ministry of Energy, Minerals and Water
+Puntland Ministry of Environment, Agriculture and Climate change
+Puntland Ministry of Livestock
+Puntland Ministry of Planning, Economic Development & International Cooperation
+Puntland Humanitarian Affairs and Disaster Management Agency 
+Qatar Charity
+Rainwater Association of Somalia
+RAHMO
+RAO
+RAWA
+RDI
+Red Crescent Society for United Arab Emirates 
+RESDO - Regional Economic Development Services Office
+Saabir Company
+SAACID
+SADO - Social-Life and Agricultural Development Organization
+SAFUK
+Samrado
+SAREDO Somalia
+Saudi Government
+Swedish African Welfare Alliance
+Save the Children Denmark
+SCC
+Save the Children UK
+SCWRW - Somali Children 
+Welfare and Rights Watch
+Somalia Development Organization
+SDRO
+Solidarity Group of Jubaland
+SHABA
+SHILCON
+Service International Relief Agency
+Solidarities
+Soma-Action
+Somali People Care 
+Somali Welfare Organization
+Somalia Community Services
+Somalia Intercommunity Organization for Rehabilitation and Development
+Federal Government of Somalia Ministry of Agriculture and Irrigation 
+Federal Government of Somalia Ministry of Energy and Water Resources 
+Federal Government of Somalia Ministry of Livestock, Forestry and Range 
+Federal Government of Somalia Disaster Management Agency 
+Somaliland Ministry of Water Resources Development
+Somaliland Ministry of Environment and Rural Development
+Somaliland Ministry of Agricultural Development
+Somaliland Ministry of Livestock
+Somaliland National Disaster Preparedness and Food Reserve Authority 
+SOPHPA
+SORERDO
+SORSO
+Southern Aid
+SOYVGA
+SPDO
+Somali Relief Center
+Somali Red Crescent Society
+SSWC
+SURDO
+Somalia Water and Land Information Management
+SWISS GROUP Caritas 
+SYPD
+TARDO
+TASCO
+Tadamun Social Society
+Terra Nuova Association
+TGV
+TIKA - Turkish International Cooperation and Development Agency 
+Turkish Government
+United Arab Emirates Red Crescent 
+United Nations Development Programme
+United Nations Educational, Scientific and Cultural Organisation
+United Nations Human Settlements Programme
+United Nations High Commission for Refugees
+United Nations Children's Fund
+Office of the Coordination of Humanitarian Affairs
+United Nations Office for Project Services 
+USA International Development
+WARDI
+WASDA
+Water For Life
+WDA - Water Development Agency
+WDC Bardera
+United Nations World Food Programme
+United Nations World Health Organisation
+WOCCA
+WOCSO
+World Assembly of Muslim Youth
+World Bank
+World Concern
+World Vision
+YME
+Community
+not_specified
+AGENCY_CHOICES
+
+
+Baki
+Borama
+Lughaye
+Zeylac
+Ceel Barde
+Tayeeglow
+Waajid
+Xudur
+Yeed
+Mogadishu
+Bandar Beyla
+Bossaso
+Caluula
+Iskushuban
+Qandala
+Qardho
+Baydhaba
+Bur Hakaba
+Diinsoor
+Qansax Dheere
+Cabudwaaq
+Cadaado
+Ceel Bur
+Ceel Dheer
+Dhusa Marreb
+Baardheere
+Belet Xaawo
+Cel Waq
+Doolow
+Garbharey
+Luuq
+Beled Weyne
+Bulo Barde
+Jalalaqsi
+Afmadow
+Badhaadhe
+Jamame
+Kismayo
+Afgooye
+Baraawe
+Kurtun Waarey
+Marka
+Qoryooley
+Sablaale
+Wanla Weyn
+Bu'aale
+Jilib
+Saakow
+Aden Yabaai
+Balcad
+Cadaale
+Jowhar
+Galkayo
+Goldogob
+Hobyo
+Jariban
+Xarardheere
+Burtinle
+Eyl
+Garowe
+Ceel Afweyn
+Ceerigaabo
+Laasqoray
+Caynabo
+Las Caanood
+Taleex
+Xudun
+Burco
+Buuhoodle
+Owdweyne
+Sheikh
+Berbera
+Gebiley
+Hargeisa
+DISTRICTS_CHOICES
+
+
+Action Afrika Hilfee.V='AAH',
+Access Aid='Access Aid',
+Action Internationale Centre La Fairm='ACF ',
+ACTED='ACTED',
+Action Aid='Action Aid',
+ADA='ADA',
+ADESO='ADESO',
+Adventist Development Relief Agency='ADRA ',
+Africa Rescue Committee='AFREC ',
+Africa 70='Africa 70',
+AGROSPHERE='AGROSPHERE',
+Africa Muslims Agency='AMA',
+Association for Participation in Development='APD ',
+African Relief Aid='ARA ',
+Aaran Relief and Development Organisation='ARDO ',
+Africa Relief and Development Programme='ARDP ',
+Advance for Small Enterprise Program='ASEP',
+PZG Belgium='ASF - PZG Belgium',
+Appropriate Sustainable Pastoralist Environment='ASPET ',
+AVORD='AVORD',
+AYUUB='AYUUB',
+Bani Adam='Bani Adam',
+Bio Fit='Bio Fit',
+British Protectorate='British Protectorate',
+BTSC='BTSC',
+Candlelight='Candlelight',
+CARE Somalia='CARE Somalia',
+Caritas='Caritas',
+Caritas Somaliland='Caritas Somaliland',
+Caritas Switzerland='Caritas Switzerland',
+CDO - Somalia='CDO - Somalia',
+CED='CED',
+Somalia European Committee for Agricultural Training='CEFA ',
+CESVI='CESVI',
+Chinese Government='Chinese Government',
+Canadian International Development Agency='CIDA ',
+International Committee for the Development of Peoples ='CISP',
+CODNET='CODNET',
+Community='Community',
+COMORAD='COMORAD',
+Concern Worldwide Somalia='Concern Worldwide Somalia',
+Cooperazione Internazionale='COOPI ',
+Coordinating Committee of The Organization for Voluntary Service='COSV ',
+CPD='CPD',
+Dahabshil Company='Dahabshil ',
+Danish Refugee Council (Puntland)='DRC - Puntland',
+Danish Refugee Council (Regional Office)='DRC ',
+Danish Refugee Council (Somaliland)='DRC - Somaliland',
+Dayah='Dayah',
+Diakonie Emergency Aid Bread for the World='DBG',
+Department For International Development='DFID ',
+Diakonia Sweden='Diakonia Sweden',
+DIAL='DIAL',
+Doha Foundation='Doha Foundation',
+European Commission='European Commission',
+European Community Humanitarian Office='ECHO ',
+European Union='European Union',
+EVSO='EVSO',
+East Africa Welfare And Development Association='EWADA',
+Food and Agriculture Organisation of the UN='FAO ',
+Farjano='Farjano',
+FERO='FERO',
+Famine Early Warning Systems Network='FEWS Net ',
+Finland Government='Finland Government',
+Former Somali Government='Former Somali Government',
+Food Security and Nutrition Analysis Unit='FSNAU',
+German Agro Action='GAA ',
+Galdogob Water Company='Galdogob Water Company',
+GEELO='GEELO',
+GGREB='GGREB',
+Global one 2015='Global one 2015',
+GMC='GMC',
+Golweyne Relief and Rehabilitation='Golweyne Relief and Rehab',
+GRC - Germany Red Cross='GRC',
+GREDO='GREDO',
+Green Hope='Green Hope',
+GRRN='GRRN',
+General Service Agency='GSA ',
+German Agency for Technical Assistance='GTZ',
+Gumco company='GUMCO',
+GWDO='GWDO',
+HAPO CHILD='HAPO CHILD',
+Hareed Human Right Organisation='Hareed Human Right Organisation',
+Hargeisa Water Agency='Hargeisa Water Agency',
+Hargeisa Voluntary Youth Committee='HAVOYOCO',
+Humanitarian Development Organization Inc='HDO ',
+HEAL-Horn Orgnaization='HEAL-Horn Orgnaization',
+Hijra='Hijra',
+HINNA='HINNA',
+Horn Relief='Horn Relief',
+Horseed water company='Horseed water company',
+Humanitarian Cooperation Somalia='Humanitarian Cooperation Somalia',
+HWS&CDO='HWS&CDO',
+Islamic Africa Relief Agency='IARA',
+IAS='IAS',
+Somalia Civil Aviation Organisation='ICAO ',
+International Committee of The Red Cross='ICRC',
+Islamic Development Bank='IDB ',
+International Fund for Agricultural Development ='IFAD',
+International Federation of Red Cross='IFRC',
+IIDA='IIDA',
+International Labour Organization='ILO ',
+IMC='IMC',
+InterSOS='InterSOS',
+International Organisation of Migration='IOM ',
+Islamic Relief Somalia='IR ',
+International Rescue Committee='IRC',
+IRD='IRD',
+ISRA='ISRA',
+ISRC - Islamic Relief Committee='ISRC ',
+Italian Government='Italian Government',
+Jubbalandese Charity Centre='JCC ',
+Japanese International Coorporation Agency='JICA ',
+JPDO='JPDO',
+Juba Shine='Juba Shine',
+Juba Water Agency='Juba Water Agency',
+Jubba Aid='Jubba Aid',
+Jubba Foundation Development and Rehabilitation='Jubba Foundation Dev and Rehab',
+KAALO Relief and Development='KAALO Relief and Development',
+Khalifa Foundation UAE='Khalifa Foundation UAE',
+Korea Government='Korea Government',
+Kulan Water Agency='Kulan Water Agency',
+Kuwait Government='Kuwait Government',
+Limaan Relief Development Organization ='LRDO ',
+LQC='LQC',
+Manhal Relief Organization='Manhal Relief Organization',
+Maygaag community='Maygaag community',
+Medair='Medair',
+Medina Hospital='Medina Hospital',
+Mercy Corps Somalia='Mercy Corps Somalia',
+Mercy USA='Mercy USA',
+MGV='MGV',
+MHSC='MHSC',
+Medicins Sans Frontieres='MSF',
+Mumin Global Water='Mumin Global Water',
+Mubarak for Relief Development Organization='MURDO',
+Muslim Aid ='Muslim Aid ',
+Muslim Charity='Muslim Charity',
+Norwegian Church Aid='NCA ',
+Network for Aid Protection Development NAPAD ='NAPAD ',
+NorSom='NorSom',
+NOVIB Netherlands='NOVIB Netherlands',
+NOVIB Somalia='NOVIB Somalia',
+Norwegian Peoples Aid='NPA ',
+Norwegian Refugee Council='NRC',
+NUWACO Water Company='NUWACO Water Company',
+Office of US Foreign Disaster Assistance='OFDA',
+ORDO='ORDO',
+Other='Other',
+Oxfam GB='Oxfam GB',
+Oxfam Novib='Oxfam Novib',
+Oxfam UK='Oxfam UK',
+Polish Humanitarian Action='PAH ',
+Pastoral and Environmental Network for the Horn of Africa ='PENHA ',
+Private='Private',
+Puntland Ministry of Energy, Minerals and Water='Puntland MoEMW ',
+Puntland Ministry of Environment, Agriculture and Climate change='Puntland MoEACC ',
+Puntland Ministry of Livestock='Puntland MoL ',
+Puntland Ministry of Planning, Economic Development & International Cooperation='Puntland MoPEDIC',
+Puntland Humanitarian Affairs and Disaster Management Agency ='Puntland HADMA',
+Qatar Charity='Qatar Charity',
+Rainwater Association of Somalia='RAAS',
+RAHMO='RAHMO',
+RAO='RAO',
+RAWA='RAWA',
+RDI='RDI',
+Red Crescent Society for United Arab Emirates ='Red Crescent Society for UAE ',
+RESDO - Regional Economic Development Services Office='RESDO ',
+Saabir Company='Saabir Company',
+SAACID='SAACID',
+SADO - Social-Life and Agricultural Development Organization='SADO ',
+SAFUK='SAFUK',
+Samrado='Samrado',
+SAREDO Somalia='SAREDO Somalia',
+Saudi Government='Saudi Government',
+Swedish African Welfare Alliance='SAWA ',
+Save the Children Denmark='SC Denmark',
+SCC='SCC',
+Save the Children UK='SC-UK ',
+SCWRW - Somali Children ='SCWRW ',
+Welfare and Rights Watch='Welfare and Rights Watch',
+Somalia Development Organization='SDO ',
+SDRO='SDRO',
+Solidarity Group of Jubaland='SGJ',
+SHABA='SHABA',
+SHILCON='SHILCON',
+Service International Relief Agency='SIRA',
+Solidarities='Solidarities',
+Soma-Action='Soma-Action',
+Somali People Care ='Somali People Care ',
+Somali Welfare Organization='Somali Welfare Organization',
+Somalia Community Services='Somalia Community Services',
+Somalia Intercommunity Organization for Rehabilitation and Development='Somalia Intercommunity Organization',
+FedeAgency,ral Government of Somalia Ministry of Agriculture and Irrigation ='FGS MoAI ',
+Federal Government of Somalia Ministry of Energy and Water Resources ='FGS MoEWR',
+Federal Government of Somalia Ministry of Livestock, Forestry and Range ='FGS MoLFR',
+Federal Government of Somalia Disaster Management Agency ='FGS SODMA',
+Somaliland Ministry of Water Resources Development='Somaliland MoWRD',
+Somaliland Ministry of Environment and Rural Development='Somaliland MoERD',
+Somaliland Ministry of Agricultural Development='Somaliland MoAD',
+Somaliland Ministry of Livestock='Somaliland MoL',
+Somaliland National Disaster Preparedness and Food Reserve Authority ='Somaliland NADFOR',
+SOPHPA='SOPHPA',
+SORERDO='SORERDO',
+SORSO='SORSO',
+Southern Aid='Southern Aid',
+SOYVGA= 'SOYVGA',
+SPDO='SPDO',
+Somali Relief Center='SRC',
+Somali Red Crescent Society='SRCS ',
+SSWC='SSWC',
+SURDO='SURDO',
+Somalia Water and Land Information Management='SWALIM',
+SWISS GROUP Caritas ='SWISS GROUP Caritas ',
+SYPD='SYPD',
+TARDO='TARDO',
+TASCO='TASCO',
+Tadamun Social Society='TASS ',
+Terra Nuova Association='Terra Nuova Association',
+TGV='TGV',
+TIKA - Turkish International Cooperation and Development Agency ='TIKA ',
+Turkish Government='Turkish Government',
+United Arab Emirates Red Crescent ='UAERC',
+United Nations Development Programme='UNDP ',
+United Nations Educational, Scientific and Cultural Organisation='UNESCO ',
+United Nations Human Settlements Programme='UNHABITAT ',
+United Nations High Commission for Refugees='UNHRC ',
+United Nations Childrens Fund='UNICEF',
+Office of the Coordination of Humanitarian Affairs='UNOCHA ',
+United Nations Office for Project Services ='UNOPS ',
+USA International Development='USAID ',
+WARDI='WARDI',
+WASDA='WASDA',
+Water For Life='Water For Life',
+WDA - Water Development Agency='WDA',
+WDC Bardera='WDC Bardera',
+United Nations World Food Programme='WFP ',
+United Nations World Health Organisation='WHO ',
+WOCCA='WOCCA',
+WOCSO='WOCSO',
+World Assembly of Muslim Youth='World Assembly of Muslim Youth',
+World Bank='World Bank',
+World Concern='World Concern',
+World Vision='World Vision',
+YME='YME',
+Community='Community',
+not_specified='Agency not specified',
+AGENCIES_CHOICES=(
+    (Action Afrika Hilfee.V, 'AAH'),
+    (Access Aid,	'Access Aid'),
+    (Action Internationale Centre La Fairm,	'ACF '),
+    (ACTED,	'ACTED'),
+    (Action Aid,	'Action Aid'),
+    (ADA,	'ADA'),
+    (ADESO,	'ADESO'),
+    (Adventist Development Relief Agency,	'ADRA '),
+    (Africa Rescue Committee,	'AFREC '),
+    (Africa 70,	'Africa 70'),
+    (AGROSPHERE,	'AGROSPHERE'),
+    (Africa Muslims Agency,	'AMA'),
+    (Association for Participation in Development,	'APD '),
+    (African Relief Aid,	'ARA '),
+    (Aaran Relief and Development Organisation,	'ARDO '),
+    (Africa Relief and Development Programme,	'ARDP '),
+    (Advance for Small Enterprise Program,	'ASEP'),
+    (PZG Belgium,	'ASF - PZG Belgium'),
+    (Appropriate Sustainable Pastoralist Environment,	'ASPET '),
+    (AVORD,	'AVORD'),
+    (AYUUB,	'AYUUB'),
+    (Bani Adam,	'Bani Adam'),
+    (Bio Fit,	'Bio Fit'),
+    (British Protectorate,	'British Protectorate'),
+    (BTSC,	'BTSC'),
+    (Candlelight,	'Candlelight'),
+    (CARE Somalia,	'CARE Somalia'),
+    (Caritas,	'Caritas'),
+    (Caritas Somaliland,	'Caritas Somaliland'),
+    (Caritas Switzerland,	'Caritas Switzerland'),
+    (CDO - Somalia,	'CDO - Somalia'),
+    (CED,	'CED'),
+    (Somalia European Committee for Agricultural Training,	'CEFA '),
+    (CESVI,	'CESVI'),
+    (Chinese Government,	'Chinese Government'),
+    (Canadian International Development Agency,	'CIDA '),
+    (International Committee for the Development of Peoples ,	'CISP'),
+    (CODNET,	'CODNET'),
+    (Community,	'Community'),
+    (COMORAD,	'COMORAD'),
+    (Concern Worldwide Somalia,	'Concern Worldwide Somalia'),
+    (Cooperazione Internazionale,	'COOPI '),
+    (Coordinating Committee of The Organization for Voluntary Service,	'COSV '),
+    (CPD,	'CPD'),
+    (Dahabshil Company,	'Dahabshil '),
+    (Danish Refugee Council (Puntland),	'DRC - Puntland'),
+    (Danish Refugee Council (Regional Office),	'DRC '),
+    (Danish Refugee Council (Somaliland),	'DRC - Somaliland'),
+    (Dayah,	'Dayah'),
+    (Diakonie Emergency Aid Bread for the World,	'DBG'),
+    (Department For International Development,	'DFID '),
+    (Diakonia Sweden,	'Diakonia Sweden'),
+    (DIAL,	'DIAL'),
+    (Doha Foundation,	'Doha Foundation'),
+    (European Commission,	'European Commission'),
+    (European Community Humanitarian Office,	'ECHO '),
+    (European Union,	'European Union'),
+    (EVSO,	'EVSO'),
+    (East Africa Welfare And Development Association,	'EWADA'),
+    (Food and Agriculture Organisation of the UN,	'FAO '),
+    (Farjano,	'Farjano'),
+    (FERO,	'FERO'),
+    (Famine Early Warning Systems Network,	'FEWS Net '),
+    (Finland Government,	'Finland Government'),
+    (Former Somali Government,	'Former Somali Government'),
+    (Food Security and Nutrition Analysis Unit,	'FSNAU'),
+    (German Agro Action,	'GAA '),
+    (Galdogob Water Company,	'Galdogob Water Company'),
+    (GEELO,	'GEELO'),
+    (GGREB,	'GGREB'),
+    (Global one 2015,	'Global one 2015'),
+    (GMC,	'GMC'),
+    (Golweyne Relief and Rehabilitation,	'Golweyne Relief and Rehab'),
+    (GRC - Germany Red Cross,	'GRC'),
+    (GREDO,	'GREDO'),
+    (Green Hope,	'Green Hope'),
+    (GRRN,	'GRRN'),
+    (General Service Agency,	'GSA '),
+    (German Agency for Technical Assistance,	'GTZ'),
+    (Gumco company,	'GUMCO'),
+    (GWDO,	'GWDO'),
+    (HAPO CHILD,	'HAPO CHILD'),
+    (Hareed Human Right Organisation,	'Hareed Human Right Organisation'),
+    (Hargeisa Water Agency,	'Hargeisa Water Agency'),
+    (Hargeisa Voluntary Youth Committee,	'HAVOYOCO'),
+    (Humanitarian Development Organization Inc,	'HDO '),
+    (HEAL-Horn Orgnaization,	'HEAL-Horn Orgnaization'),
+    (Hijra,	'Hijra'),
+    (HINNA,	'HINNA'),
+    (Horn Relief,	'Horn Relief'),
+    (Horseed water company,	'Horseed water company'),
+    (Humanitarian Cooperation Somalia,	'Humanitarian Cooperation Somalia'),
+    (HWS&CDO,	'HWS&CDO'),
+    (Islamic Africa Relief Agency,	'IARA'),
+    (IAS,	'IAS'),
+    (Somalia Civil Aviation Organisation,	'ICAO '),
+    (International Committee of The Red Cross,	'ICRC'),
+    (Islamic Development Bank,	'IDB '),
+    (International Fund for Agricultural Development ,	'IFAD'),
+    (International Federation of Red Cross,	'IFRC'),
+    (IIDA,	'IIDA'),
+    (International Labour Organization,	'ILO '),
+    (IMC,	'IMC'),
+    (InterSOS,	'InterSOS'),
+    (International Organisation of Migration,	'IOM '),
+    (Islamic Relief Somalia,	'IR '),
+    (International Rescue Committee,	'IRC'),
+    (IRD,	'IRD'),
+    (ISRA,	'ISRA'),
+    (ISRC - Islamic Relief Committee,	'ISRC '),
+    (Italian Government,	'Italian Government'),
+    (Jubbalandese Charity Centre,	'JCC '),
+    (Japanese International Coorporation Agency,	'JICA '),
+    (JPDO,	'JPDO'),
+    (Juba Shine,	'Juba Shine'),
+    (Juba Water Agency,	'Juba Water Agency'),
+    (Jubba Aid,	'Jubba Aid'),
+    (Jubba Foundation Development and Rehabilitation,	'Jubba Foundation Dev and Rehab'),
+    (KAALO Relief and Development,	'KAALO Relief and Development'),
+    (Khalifa Foundation UAE,	'Khalifa Foundation UAE'),
+    (Korea Government,	'Korea Government'),
+    (Kulan Water Agency,	'Kulan Water Agency'),
+    (Kuwait Government,	'Kuwait Government'),
+    (Limaan Relief Development Organization ,	'LRDO '),
+    (LQC,	'LQC'),
+    (Manhal Relief Organization,	'Manhal Relief Organization'),
+    (Maygaag community,	'Maygaag community'),
+    (Medair,	'Medair'),
+    (Medina Hospital,	'Medina Hospital'),
+    (Mercy Corps Somalia,	'Mercy Corps Somalia'),
+    (Mercy USA,	'Mercy USA'),
+    (MGV,	'MGV'),
+    (MHSC,	'MHSC'),
+    (Medicins Sans Frontieres,	'MSF'),
+    (Mumin Global Water,	'Mumin Global Water'),
+    (Mubarak for Relief Development Organization,	'MURDO'),
+    (Muslim Aid ,	'Muslim Aid '),
+    (Muslim Charity,	'Muslim Charity'),
+    (Norwegian Church Aid,	'NCA '),
+    (Network for Aid Protection Development NAPAD ,	'NAPAD '),
+    (NorSom,	'NorSom'),
+    (NOVIB Netherlands,	'NOVIB Netherlands'),
+    (NOVIB Somalia,	'NOVIB Somalia'),
+    (Norwegian Peoples Aid,	'NPA '),
+    (Norwegian Refugee Council,	'NRC'),
+    (NUWACO Water Company,	'NUWACO Water Company'),
+    (Office of US Foreign Disaster Assistance,	'OFDA'),
+    (ORDO,	'ORDO'),
+    (Other,	'Other'),
+    (Oxfam GB,	'Oxfam GB'),
+    (Oxfam Novib,	'Oxfam Novib'),
+    (Oxfam UK,	'Oxfam UK'),
+    (Polish Humanitarian Action,	'PAH '),
+    (Pastoral and Environmental Network for the Horn of Africa ,	'PENHA '),
+    (Private,	'Private'),
+    (Puntland Ministry of Energy, Minerals and Water,	'Puntland MoEMW '),
+    (Puntland Ministry of Environment, Agriculture and Climate change,	'Puntland MoEACC '),
+    (Puntland Ministry of Livestock,	'Puntland MoL '),
+    (Puntland Ministry of Planning, Economic Development & International Cooperation,	'Puntland MoPEDIC'),
+    (Puntland Humanitarian Affairs and Disaster Management Agency ,	'Puntland HADMA'),
+    (Qatar Charity,	'Qatar Charity'),
+    (Rainwater Association of Somalia,	'RAAS'),
+    (RAHMO,	'RAHMO'),
+    (RAO,	'RAO'),
+    (RAWA,	'RAWA'),
+    (RDI,	'RDI'),
+    (Red Crescent Society for United Arab Emirates ,	'Red Crescent Society for UAE '),
+    (RESDO - Regional Economic Development Services Office,	'RESDO '),
+    (Saabir Company,	'Saabir Company'),
+    (SAACID,	'SAACID'),
+    (SADO - Social-Life and Agricultural Development Organization,	'SADO '),
+    (SAFUK,	'SAFUK'),
+    (Samrado,	'Samrado'),
+    (SAREDO Somalia,	'SAREDO Somalia'),
+    (Saudi Government,	'Saudi Government'),
+    (Swedish African Welfare Alliance,	'SAWA '),
+    (Save the Children Denmark,	'SC Denmark'),
+    (SCC,	'SCC'),
+    (Save the Children UK,	'SC-UK '),
+    (SCWRW - Somali Children ,	'SCWRW '),
+    (Welfare and Rights Watch,	'Welfare and Rights Watch'),
+    (Somalia Development Organization,	'SDO '),
+    (SDRO,	'SDRO'),
+    (Solidarity Group of Jubaland,	'SGJ'),
+    (SHABA,	'SHABA'),
+    (SHILCON,	'SHILCON'),
+    (Service International Relief Agency,	'SIRA'),
+    (Solidarities,	'Solidarities'),
+    (Soma-Action,	'Soma-Action'),
+    (Somali People Care ,	'Somali People Care '),
+    (Somali Welfare Organization,	'Somali Welfare Organization'),
+    (Somalia Community Services,	'Somalia Community Services'),
+    (Somalia Intercommunity Organization for Rehabilitation and Development,	'Somalia Intercommunity Organization'),
+    (FedeAgency,ral Government of Somalia Ministry of Agriculture and Irrigation ,	'FGS MoAI '),
+    (Federal Government of Somalia Ministry of Energy and Water Resources ,	'FGS MoEWR'),
+    (Federal Government of Somalia Ministry of Livestock, Forestry and Range ,	'FGS MoLFR'),
+    (Federal Government of Somalia Disaster Management Agency ,	'FGS SODMA'),
+    (Somaliland Ministry of Water Resources Development,	'Somaliland MoWRD'),
+    (Somaliland Ministry of Environment and Rural Development,	'Somaliland MoERD'),
+    (Somaliland Ministry of Agricultural Development,	'Somaliland MoAD'),
+    (Somaliland Ministry of Livestock,	'Somaliland MoL'),
+    (Somaliland National Disaster Preparedness and Food Reserve Authority ,	'Somaliland NADFOR'),
+    (SOPHPA,	'SOPHPA'),
+    (SORERDO,	'SORERDO'),
+    (SORSO,	'SORSO'),
+    (Southern Aid,	'Southern Aid'),
+    (SOYVGA, 'SOYVGA'),
+    (SPDO,	'SPDO'),
+    (Somali Relief Center,	'SRC'),
+    (Somali Red Crescent Society,	'SRCS '),
+    (SSWC,	'SSWC'),
+    (SURDO,	'SURDO'),
+    (Somalia Water and Land Information Management,	'SWALIM'),
+    (SWISS GROUP Caritas ,	'SWISS GROUP Caritas '),
+    (SYPD,	'SYPD'),
+    (TARDO,	'TARDO'),
+    (TASCO,	'TASCO'),
+    (Tadamun Social Society,	'TASS '),
+    (Terra Nuova Association,	'Terra Nuova Association'),
+    (TGV,	'TGV'),
+    (TIKA - Turkish International Cooperation and Development Agency ,	'TIKA '),
+    (Turkish Government,	'Turkish Government'),
+    (United Arab Emirates Red Crescent ,	'UAERC'),
+    (United Nations Development Programme,	'UNDP '),
+    (United Nations Educational, Scientific and Cultural Organisation,	'UNESCO '),
+    (United Nations Human Settlements Programme,	'UNHABITAT '),
+    (United Nations High Commission for Refugees,	'UNHRC '),
+    (United Nations Childrens Fund,	'UNICEF'),
+    (Office of the Coordination of Humanitarian Affairs,	'UNOCHA '),
+    (United Nations Office for Project Services ,	'UNOPS '),
+    (USA International Development,	'USAID '),
+    (WARDI,	'WARDI'),
+    (WASDA,	'WASDA'),
+    (Water For Life,	'Water For Life'),
+    (WDA - Water Development Agency,	'WDA'),
+    (WDC Bardera,	'WDC Bardera'),
+    (United Nations World Food Programme,	'WFP '),
+    (United Nations World Health Organisation,	'WHO '),
+    (WOCCA,	'WOCCA'),
+    (WOCSO,	'WOCSO'),
+    (World Assembly of Muslim Youth,	'World Assembly of Muslim Youth'),
+    (World Bank,	'World Bank'),
+    (World Concern,	'World Concern'),
+    (World Vision,	'World Vision'),
+    (YME,	'YME'),
+    (Community,	'Community'),
+    (not_specified,	'Agency not specified'),
+)

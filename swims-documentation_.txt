@@ -1,0 +1,240 @@
+CREATE DATABASE swims
+  WITH ENCODING='UTF8'
+       OWNER=postgres
+       TEMPLATE=postgres
+       LC_COLLATE='en_US.UTF-8'
+       CONNECTION LIMIT=-1;
+
+
+ogrinfo world/data/TM_WORLD_BORDERS-0.3.shp
+
+ogrinfo -so world/data/TM_WORLD_BORDERS-0.3.shp TM_WORLD_BORDERS-0.3
+
+python manage.py migrate --database=swims_data
+
+python manage.py sqlmigrate watersources 0001
+
+pip install GDAL
+
+python manage.py shell
+from watersource import load
+load.run()
+
+#django.contrib.gis.gdal.error.GDALException: Could not open the datasource at 
+
+The graph_models command also requires the pygraphviz library to generate the images. YMMV but the following worked for me on Ubuntu:
+sudo apt-get install libgraphviz-dev
+pip install pygraphviz
+python manage.py graph_models -a -g -o models.png
+
+cd ~/venv/swims-livemap/ && . bin/activate && cd ~/projects/faoso/swims/
+
+sudo code --user-data-dir="~/var/www/html/swims-livemap/"
+
+Step 2: Connect your existing repository to Bitbucket
+git clone https://kngeno@bitbucket.org/kngeno/faoso-swims.git
+
+git remote -v 
+git remote rm origin
+git remote add origin git@bitbucket.org:kngeno/faoso-swims.git
+git push -u origin master
+
+
+scp -i /home/ngeno/.ssh/kevin_id_rsa -P 7360 /home/ngeno/projects/faoso/swims.tar.gz kngeno@174.138.122.56:/home/kngeno/
+scp -i /home/ngeno/.ssh/kevin_id_rsa -P 7360 kngeno@174.138.122.56:/home/kngeno/spatial.faoswalim.org.conf projects/faoso/swims/nginx/
+
+
+ssh -p 7360 -i /home/ngeno/.ssh/kevin_id_rsa kngeno@174.138.122.56
+
+sudo sudo
+cp swims.tar.gz /opt/
+tar -zxvf swims.tar.gz
+chmod 775 -Rf swims
+chown geonode:www-data -Rf swims
+#
+create database swims;
+\c swims
+create extension postgis;
+swims=# ALTER DATABASE swims OWNER TO swims;
+swims=# GRANT ALL PRIVILEGES ON DATABASE "swims" to swims;
+root@spatial:/opt# pg_restore -U swims -d swims -Fc /opt/swims/dbases/swims_20122019.backup
+cd /home/geonode/.virtualenvs/swims/ && . bin/activate && cd /opt/swims/
+python manage.py collectstatic
+python manage.py runserver 0.0.0.0:82
+sudo nginx -s reload
+
+
+virtualenv -p python3 venv
+
+#Production
+#Requirements:
+pip install rcssmin --install-option="--without-c-extensions"
+pip install rjsmin --install-option="--without-c-extensions"
+pip install django-compressor --upgrade
+
+pip install psycopg2-binary==2.8.3
+
+#Database setup
+
+create database swims;
+\c swims
+create extension postgis;
+CREATE USER swims WITH PASSWORD 'SkD9IuuZ'; # should be same as password in setting.py
+GRANT ALL PRIVILEGES ON DATABASE "swims" to swims;
+ALTER DATABASE swims OWNER TO swims;
+
+ALTER TABLE public.django_migrations OWNER TO swims;
+ALTER TABLE watersource ADD COLUMN region VARCHAR;
+
+psql swims -c "GRANT ALL ON ALL TABLES IN SCHEMA public to swims;"
+psql swims -c "GRANT ALL ON ALL SEQUENCES IN SCHEMA public to swims;"
+psql swims -c "GRANT ALL ON ALL FUNCTIONS IN SCHEMA public to swims;"
+
+SELECT 'ALTER TABLE '|| schemaname || '.' || tablename ||' OWNER TO swims;'
+FROM pg_tables WHERE NOT schemaname IN ('pg_catalog', 'information_schema')
+ORDER BY schemaname, tablename;
+
+SELECT 'ALTER SEQUENCE '|| sequence_schema || '.' || sequence_name ||' OWNER TO swims;'
+FROM information_schema.sequences WHERE NOT sequence_schema IN ('pg_catalog', 'information_schema')
+ORDER BY sequence_schema, sequence_name;
+
+SELECT 'ALTER VIEW '|| table_schema || '.' || table_name ||' OWNER TO swims;'
+FROM information_schema.views WHERE NOT table_schema IN ('pg_catalog', 'information_schema')
+ORDER BY table_schema, table_name;
+
+sudo -u postgres -i pg_dump -c -Fc swims > swims.backup
+pg_restore -U swims -d swims -Fc /home/swims.backup
+
+virtualenv --python=/usr/bin/python3.6 swims
+#Server
+pip install uwsgi
+sudo apt-get install nginx
+sudo /etc/init.d/nginx start
+
+sudo ln -s /home/ngeno/projects/faoso/swims/nginx/swims.conf /etc/nginx/sites-enabled/
+netstat -lpn
+sudo nginx -s reload
+
+uwsgi --socket swims.sock --wsgi-file test.py --chmod-socket=664
+uwsgi --socket swims.sock --module swims.wsgi --chmod-socket=664
+
+
+#https://www.alibabacloud.com/blog/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04_594319
+
+#Too many symbolic links - recreate links
+rm /etc/nginx/sites-enabled/swims.conf
+ln -fs /etc/nginx/sites-available/swims.conf /etc/nginx/sites-enabled/swims.conf
+206.189.128.47
+ln -fs /etc/nginx/sites-available/swalim.conf /etc/nginx/sites-enabled/swalim.conf
+
+systemctl daemon-reload
+systemctl start gunicorn
+systemctl enable gunicorn
+systemctl status gunicorn
+sudo systemctl restart gunicorn
+
+systemctl restart nginx
+
+nano /var/log/nginx/swims-error.log
+
+lsof -i -n -P +c 0 | grep ':80'
+cd ~/home/kngeno/venv/swims/ && . bin/activate && cd ~/home/kngeno/swims
+
+cd ~/venv/swims-livemap/ && . bin/activate && cd ~/projects/faoso/swims
+
+sudo systemctl daemon-reload && sudo service uwsgi start && journalctl -xe
+
+systemctl status uwsgi.service
+
+sudo nano /etc/systemd/system/uwsgi.service
+
+nano /etc/nginx/sites-available/swims.conf
+
+uwsgi --socket 0.0.0.0:81 --protocol=http -w test
+
+uwsgi -s-http --home /home/kngeno/venv/swims --module swims.wsgi --chmod-socket=666
+uwsgi --socket myproject.sock --home /home/kngeno/venv/swims --module swims.wsgi --chmod-socket=666
+
+uwsgi --http :81 --home /home/kngeno/venv/swims --chdir /home/kngeno/swims -w /home/kngeno/swims/swims.wsgi
+
+cd /home/kngeno/venv/swims/ && . bin/activate && cd /opt/swims/
+
+
+nano /var/log/nginx/swims-error.log
+
+uwsgi --socket :81 --wsgi-file test.py
+uwsgi --socket :82 --wsgi-file swims.sock --thunder-lock
+uwsgi --socket swims.sock --wsgi-file swims.wsgi  --chmod-socket=664 --uid geonode --gid www-data --thunder-lock
+
+uwsgi -s :82 --home /home/kngeno/venv/swims --chdir /opt/swims -w swims.wsgi
+
+nano /etc/uwsgi/sites/swims.ini
+sudo nano /etc/systemd/system/swims.service
+
+systemctl restart swims.service
+systemctl status swims.service
+
+systemctl daemon-workon  && systemctl restart swims.service
+
+
+#Best use
+https://raturi.in/blog/setup-django-nginx-and-gunicorn-for-production-ubuntu/
+
+
+Theme:
+#4ba614
+#3093c7
+
+Icons8
+Borehole: #2A3FD6
+Dug Well
+Dam: #2BD9EA
+Berkad: #AC6B0F
+Spring: #1FA285 
+Other: #9b59b6
+
+#008000
+#ffa500
+#f00
+
+update watersource set establishing_agency = replace(establishing_agency,'Community', 'Communal');
+update watersource set water_use_type = replace(water_use_type,'Rural, Urban', 'Rural Urban');
+update watersource set permanent = replace(permanent,'Dont know', 'No');
+update watersource set functioning = replace(functioning,'Dont know', 'No');
+update watersource set functioning = replace(functioning,'', 'No');
+update watersource set functioning = replace(functioning,'yes', 'Yes');
+update watersource set functioning = replace(functioning,'no', 'No');
+update watersource set functioning = replace(functioning,'abandoned', 'Abandoned');
+update watersource set permanent = replace(permanent,'yes', 'Yes');
+update watersource set permanent = replace(permanent,'no', 'No');
+update watersource set management_type = replace(management_type,'Community', 'Communal');
+update watersource set management_type = replace(management_type,'Public-Private', 'Private Public Partnership');
+update watersource set intervention_agency = replace(intervention_agency,'Community', 'Communal');
+update watersource set source_type = replace(source_type,'Shallow well', 'Dug Well');
+
+UPDATE watersource SET functioning = 'No' WHERE functioning IS NULL;
+
+update watersource set inspecting_agency = replace(inspecting_agency,'Federal Government of Somalia Ministry of Energy and Water Resources', 'Federal Government of Somalia Ministry of Energy and Water Resources');
+update watersource set inspecting_agency = replace(inspecting_agency,'Federal Government of Somalia Ministry of Livestock, Forestry and Range', 'Federal Government of Somalia Ministry of Livestock, Forestry and Range');
+update watersource set inspecting_agency = replace(inspecting_agency,'Puntland Ministry of Energy, Minerals and Water', 'Puntland Ministry of Energy, Minerals and Water');
+update watersource set inspecting_agency = replace(inspecting_agency,'Somaliland Ministry of Water Resources Development', 'Somaliland Ministry of Water Resources Development');
+
+update watersource set inspecting_agency = replace(inspecting_agency,'Federal Government of Somalia Ministry of Energy and Water Resources', 'FGS MEWR');
+update watersource set inspecting_agency = replace(inspecting_agency,'Federal Government of Somalia Ministry of Livestock, Forestry and Range', 'FGS MLFR');
+update watersource set inspecting_agency = replace(inspecting_agency,'Puntland Ministry of Energy, Minerals and Water', 'PM EMW');
+update watersource set inspecting_agency = replace(inspecting_agency,'Somaliland Ministry of Water Resources Development', 'SM WRD');
+
+update watersource set inspecting_agency = replace(inspecting_agency,'FGS MEWR', 'Federal Government of MEWR');
+update watersource set inspecting_agency = replace(inspecting_agency,'FGS MLFR', 'Federal Government of MLFR');
+update watersource set inspecting_agency = replace(inspecting_agency,'PM EMW', 'Puntland Ministry of EMW');
+update watersource set inspecting_agency = replace(inspecting_agency,'SM WRD', 'Somaliland Ministry of WRD');
+
+update watersource set inspecting_agency = replace(inspecting_agency,'Federal Government of MEWR','FGS MEWR');
+update watersource set inspecting_agency = replace(inspecting_agency,'Federal Government of MLFR','FGS MLFR');
+update watersource set inspecting_agency = replace(inspecting_agency,'Puntland Ministry of EMW','PM EMW');
+update watersource set inspecting_agency = replace(inspecting_agency,'Somaliland Ministry of WRD','SM WRD');
+
+"Federal Government of Somalia Ministry of Energy and Water Resources"
+"Federal Government of Somalia Ministry of Livestock, Forestry and Range"
+"Puntland Ministry of Energy, Minerals and Water"
+"Somaliland Ministry of Water Resources Development"

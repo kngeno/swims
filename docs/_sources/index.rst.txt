@@ -1,0 +1,65 @@
+*************************************
+SWIMS User Manual & Documentation
+*************************************
+
+.. meta::
+   :description lang=en: SWIMS User Manual and System Documentation.
+
+**Somalia Water Information System (SWIMS)** is a web application that has features for both data management and data visualization through the internet.
+Agencies that manage water information can now use the live map to collect, update, and disseminate water sources data while other information users 
+will be able to use the live map to visualize the data as well as “export” it for a variety of uses outside the live map. The live map has dramatically 
+improved how water source information is managed in Somalia, where point water sources are the primary source of water. Through the live map, water sources 
+information is accessible from any location, as long as there is internet connectivity. The published data is be available to all users in UN agencies, 
+NGOs and private sector users ...
+
+
+Table of Contents
+=================================
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Getting Started
+
+   getting-started/index
+   getting-started/general-features  
+   getting-started/general-faq
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Installation
+
+   installation/setup
+
+
+.. toctree::
+   :maxdepth: 4
+   :caption: User Guide
+
+   user-docs/swims-client  
+   user-docs/swims-admin   
+   user-docs/swims-developer
+
+
+.. toctree::
+   :maxdepth: 4
+   :caption: System Guide
+   
+   system/introduction
+   system/swims-maintenance
+   system/swims-issues
+
+
+.. toctree::
+   :maxdepth: 4
+   :caption: References
+
+   references/index
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
