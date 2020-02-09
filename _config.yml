@@ -1,0 +1,12 @@
+theme: jekyll-theme-minimal
+email: kngeno.kevin@gmail.com
+url: kngeno.github.io
+baseurl: "/"
+source: 'docs manual/swims/_build/html'
+destination: docs/
+include: ["_modules","_sources","_static",_"images"]
+timezone: Africa/Nairobi
+title: 'SWIMS User Manual'
+name: 'SWIMS User Manual'
+markdown: 
+header: 'SWIMS User Manual'
