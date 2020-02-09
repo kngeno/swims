@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 email: kngeno.kevin@gmail.com
 url: kngeno.github.io
-baseurl: "/"
+baseurl: "/swims"
 source: 'docs manual/swims/_build/html'
 destination: docs/
 include: ["_modules","_sources","_static",_"images"]
