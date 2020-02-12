@@ -11,7 +11,7 @@ celery==4.3.0
 Click==7.0
 defusedxml==0.6.0
 diff-match-patch==20181111
-Django==2.2.5
+Django==2.2.10
 django-appconf==1.0.3
 django-avatar==4.1.0
 django-axes==5.0.18
