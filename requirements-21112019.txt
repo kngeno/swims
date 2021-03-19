@@ -36,7 +36,7 @@ django-maploom==1.7.0
 django-simple-history==2.7.3
 django-timezone-field==3.0
 django-widget-tweaks==1.4.5
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 entrypoints==0.3
 et-xmlfile==1.0.1
 flake8==3.7.8
