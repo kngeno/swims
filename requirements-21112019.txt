@@ -6,7 +6,7 @@ autopep8==1.4.4
 backports.csv==1.0.7
 billiard==3.6.1.0
 black==19.3b0
-bottle==0.12.17
+bottle==0.12.20
 celery==4.3.0
 Click==7.0
 defusedxml==0.6.0
